@@ -21,27 +21,24 @@ def main(page: ft.Page):
         await update_timer(page, timer_value, start_time)
         
 
-#не меняет цвет потому что разрабы не фиксят этот баг, не трогать - ждать обнову
     async def change_main_button_style(e):
         nonlocal button_status
-        #хз что это
+        print(button_status)
+
         if main_button.data:
-            main_button.bgcolor = ft.colors.RED_200
-            button_status = "Stop"
+            main_button.bgcolor = ft.Colors.RED_200
+            main_button.text = "Stop"
             main_button.data = False
             await start_timer()
         else:
-            main_button.bgcolor = ft.colors.GREEN_200
-            button_status = "Start"
+            main_button.bgcolor = ft.Colors.GREEN_200
+            main_button.text = "Start"
             main_button.data = True
         
-        main_button.data = True
-        # main_button.data = not main_button.data
-        main_button.text = button_status
         page.update()
 
-    main_button = ft.ElevatedButton(text=button_status, 
-                                    data=True, 
+    main_button = ft.ElevatedButton(text = button_status, 
+                                    data = True, 
                                     bgcolor = ft.colors.GREEN_200, 
                                     width = 300,
                                     height = 300,
