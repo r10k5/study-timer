@@ -53,18 +53,28 @@ def main(page: ft.Page):
         on_click=change_main_button_style
     )
 
+    finish_button = ft.ElevatedButton(
+        text = "Finish", 
+        bgcolor = ft.colors.GREY_100, 
+        width = 80,
+        height = 80,
+    )
+
     page.add(
         ft.Column(
             [
                 ft.Container(
                     timer_value,
                     alignment=ft.alignment.center,
-                    
                 ),
                 ft.Container(
                     main_button,
                     alignment=ft.alignment.center,
                 ),
+                ft.Container(
+                    finish_button,
+                    alignment=ft.alignment.center,
+                )
             ],
            
         ),
