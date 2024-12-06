@@ -21,7 +21,10 @@ async def update_timer(page, timer_text):
 def main(page: ft.Page):
     page.title = "HomeTimer"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    timer_value = ft.Text(value="0.00 sec")
+    timer_value = ft.Text(
+        value="0.00 sec",
+        style=ft.TextStyle(weight=ft.FontWeight.BOLD),
+    )
 
     async def start_timer():
         await update_timer(page, timer_value)
@@ -51,15 +54,19 @@ def main(page: ft.Page):
     )
 
     page.add(
-        timer_value,
-        ft.Row(
+        ft.Column(
             [
+                ft.Container(
+                    timer_value,
+                    alignment=ft.alignment.center,
+                    
+                ),
                 ft.Container(
                     main_button,
                     alignment=ft.alignment.center,
                 ),
             ],
-            alignment=ft.MainAxisAlignment.CENTER,
+           
         ),
     )
     
