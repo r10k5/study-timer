@@ -12,6 +12,24 @@
                 "start-time": "14:56:17",
                 "stop-time": "14:56:17",
                 "total_time": "0:00:05"
+            },
+            {
+                "date": "07.12.2024",
+                "start-time": "14:58:55",
+                "stop-time": "14:58:55",
+                "total_time": "0:00:02"
+            },
+            {
+                "date": "07.12.2024",
+                "start-time": "15:00:02",
+                "stop-time": "15:00:02",
+                "total_time": "0:00:02"
+            },
+            {
+                "date": "07.12.2024",
+                "start-time": "15:00:06",
+                "stop-time": "15:00:07",
+                "total_time": "0:00:02"
             }
         ]
     }

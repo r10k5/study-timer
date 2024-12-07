@@ -30,7 +30,7 @@ def main(page: ft.Page):
         page.update()
     
     def finishing_timer(e):
-        if _timer.timer_is_run:
+        if _timer.left_time > 0:
             _timer.finish()
             formated_time = str(datetime.timedelta(seconds=int(_timer.left_time)))
             _timer_value.value = formated_time
