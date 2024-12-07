@@ -41,20 +41,31 @@ class Timer:
 def write_to_json(timer: Timer):
 
     total_time = str(datetime.timedelta(seconds=int(timer.left_time)))
-
-    data = {
-        "projectName": {
-            "sessions": [
-                {
-                    "date": timer.date,
-                    "start-time": datetime.datetime.fromtimestamp(timer.start_time).strftime("%H:%M:%S"),
-                    "stop-time": datetime.datetime.fromtimestamp(timer.stop_time).strftime("%H:%M:%S"),
-                    "total_time": total_time
-                }
-            ]
-        }
+    projects = None
+    session = {
+        "date": timer.date,
+        "start-time": datetime.datetime.fromtimestamp(timer.start_time).strftime("%H:%M:%S"),
+        "stop-time": datetime.datetime.fromtimestamp(timer.stop_time).strftime("%H:%M:%S"),
+        "total_time": total_time
     }
+
+    with open("user_projects.json", "r") as file:
+        try:
+            projects = json.load(file)
+        except:
+            projects = None
+
+    if projects: 
+        projects["projectName"]["sessions"].append(session)
+    else:
+        projects = {
+            "projectName": {
+                "sessions": [
+                    session
+                ]
+            }
+        }
     
     with open("user_projects.json", "w") as file:
-        json.dump(data, file)
+        json.dump(projects, file, indent=4)
     return total_time

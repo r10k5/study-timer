@@ -30,10 +30,11 @@ def main(page: ft.Page):
         page.update()
     
     def finishing_timer(e):
-        _timer.finish()
-        formated_time = str(datetime.timedelta(seconds=int(_timer.left_time)))
-        _timer_value.value = formated_time
-        change_main_button_style()
+        if _timer.timer_is_run:
+            _timer.finish()
+            formated_time = str(datetime.timedelta(seconds=int(_timer.left_time)))
+            _timer_value.value = formated_time
+            change_main_button_style()
 
     _main_button = create_main_button(change_button_status) 
     _finish_button = create_finish_button(finishing_timer)
