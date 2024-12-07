@@ -17,11 +17,12 @@ def create_main_button(use_change_style_func):
     )
     return main_button
 
-def create_finish_button():
+def create_finish_button(finishing_timer):
     finish_button = ft.ElevatedButton(
         text = "Finish", 
         bgcolor = ft.colors.GREY_100, 
         width = 80,
         height = 80,
+        on_click = finishing_timer,
     )
     return finish_button

@@ -1,13 +1,1 @@
-{
-    "projectName": {
-        "icon": "123.png",
-        "sessions": [
-            {
-                "date": "02.03.2003",
-                "start-time": "13:40",
-                "stop-time": "16:00",
-                "total_time": "00:20"
-            }
-        ]
-    }
-}
+{"projectName": {"sessions": [{"date": "07.12.2024", "start-time": "14:33:31", "stop-time": "14:33:31", "total_time": "0:00:07"}]}}
